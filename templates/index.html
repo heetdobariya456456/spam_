@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spam Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="card">
+    <h1>📧 Spam Detection</h1>
+    <p>Enter a message to check if it's spam</p>
+
+    <form method="POST">
+        <textarea name="message" placeholder="Type your message here..." required></textarea>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        <h2>{{ prediction }}</h2>
+        <p>Confidence: {{ probability }}%</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
